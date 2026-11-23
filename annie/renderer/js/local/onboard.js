@@ -139,7 +139,7 @@
       try { localStorage.setItem(SEEN_KEY, ver); } catch (e) { }
       // 首次使用（引导未标记）不弹播报，避免与引导页叠加
       try { if (localStorage.getItem(LS_KEY) !== '1') return; } catch (e) { return; }
-      fetch('https://raw.githubusercontent.com/Zhou1019-1/AnniePlayer-LXversion/main/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.md', { cache: 'no-store' })
+      fetch('https://raw.githubusercontent.com/Zhou1019-1/AnniePlayer-LXversion-Windows/main/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.md', { cache: 'no-store' })
         .then(function (r) { return r.ok ? r.text() : ''; })
         .then(function (md) {
           if (!md) return; // 离线静默

@@ -35,7 +35,7 @@ final class VMInstaller {
     ///   托管在固定 tag 的 prerelease 资产里（仿 Windows 线 wrapper-lite 的做法）。
     ///   首次运行时如缺失，自动从该 Release 下载。
     static let runtimeTag = "mac-runtime-v1"
-    static let runtimeRepo = "Zhou1019-1/AnniePlayer-LXversion"
+    static let runtimeRepo = "Zhou1019-1/AnniePlayer-LXversion-Windows"
     static var runtimeBase: String {
         // 允许用环境变量覆盖（本地调试 / 私有镜像）
         if let override = ProcessInfo.processInfo.environment["MAC_RUNTIME_BASE"], !override.isEmpty {

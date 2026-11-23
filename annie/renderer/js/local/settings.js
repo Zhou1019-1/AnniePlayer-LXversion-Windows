@@ -4042,7 +4042,7 @@
     linkLab.appendChild(el('div', 'set-hint', 'QQ 群：1023637098'));
     var linkWrap = el('div', 'set-ctrl');
     var btnRepo = el('button', 'btn-ghost', 'GitHub 仓库');
-    btnRepo.onclick = function () { window.mine.openExternal('https://github.com/Zhou1019-1/AnniePlayer-LXversion'); };
+    btnRepo.onclick = function () { window.mine.openExternal('https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows'); };
     linkWrap.appendChild(btnRepo);
     linkRow.appendChild(linkLab); linkRow.appendChild(linkWrap);
     sAbout.appendChild(linkRow);

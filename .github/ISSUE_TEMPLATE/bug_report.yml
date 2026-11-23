@@ -1,0 +1,24 @@
+name: 缺陷报告
+description: 报告 Windows 版本的功能缺陷
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 应用版本与系统
+      placeholder: 例如 V5.0.0 / Windows 11 24H2
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 问题与复现步骤
+      description: 不要填写账号、Cookie、Token、密码或个人信息。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 日志与预期结果
+      description: 提供脱敏后的日志、诊断包结论或截图链接。

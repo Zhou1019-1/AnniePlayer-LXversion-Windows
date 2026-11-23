@@ -87,7 +87,7 @@ echo "=== 3. 下载运行时依赖 ==="
 #     · wrapper-pkg  → 本仓库 mac-runtime-v1 Release（只有 49MB）
 #   本地有文件时优先用本地（开发者用），云端自动下载。
 RUNTIME_TAG="${MAC_RUNTIME_TAG:-mac-runtime-v1}"
-REPO="${GITHUB_REPOSITORY:-Zhou1019-1/AnniePlayer-LXversion}"
+REPO="${GITHUB_REPOSITORY:-Zhou1019-1/AnniePlayer-LXversion-Windows}"
 RUNTIME_BASE="${MAC_RUNTIME_BASE:-https://github.com/$REPO/releases/download/$RUNTIME_TAG}"
 # ⚠️ 2026-10-24：Ubuntu 官方源经常超时（实测 30s ×4 次全超时）。
 #   改用中科大镜像（实测 12MB/s），多源按顺序回退。
@@ -278,7 +278,7 @@ cat > "$README_TMP" << 'READMEEOF'
 
 【反馈】
 邮箱：2947205204@qq.com
-GitHub：https://github.com/Zhou1019-1/AnniePlayer-LXversion/issues
+GitHub：https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/issues
 
 【致谢】
 原版 Windows 安妮播放器：无敌章鱼哥 出品 · 交流 QQ 群 1023637098
