@@ -56,8 +56,8 @@ function download(url, dest, redirects = 5) {
     await download(FFMPEG_ZIP_URL, zip).catch(e => die('下载失败: ' + e.message));
     log('解压中…');
     fs.rmSync(dir, { recursive: true, force: true });
-    const ex = spawnSync('powershell', ['-NoProfile', '-Command',
-      `Expand-Archive -LiteralPath '${zip}' -DestinationPath '${dir}' -Force`], { stdio: 'inherit' });
+    fs.mkdirSync(dir, { recursive: true });
+    const ex = spawnSync('tar.exe', ['-xf', zip, '-C', dir], { stdio: 'inherit' });
     if (ex.status !== 0) die('解压失败');
     const bin = fs.readdirSync(dir).map(d => path.join(dir, d, 'bin')).find(p => fs.existsSync(p));
     if (!bin) die('压缩包内未找到 bin 目录');
