@@ -1,0 +1,22 @@
+name: 构建或发布协助
+description: 请求 owner 协助 CI、Artifact、Secret 或 Release
+title: "[Build] "
+labels: [build]
+body:
+  - type: input
+    id: links
+    attributes:
+      label: PR / Actions Run / Artifact 链接
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: 需要 owner 执行的事项
+      description: 只写 Secret 名称和用途，不要填写秘密原文。
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 已完成的验证与 SHA256

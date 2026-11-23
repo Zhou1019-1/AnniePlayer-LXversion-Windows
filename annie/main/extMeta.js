@@ -7,7 +7,7 @@
  * ========================================================================== */
 
 let httpFetch = globalThis.fetch;
-let USER_AGENT = 'AnniePlayer/4.4.2 (+https://github.com/Zhou1019-1/AnniePlayer-LXversion)';
+let USER_AGENT = 'AnniePlayer/4.4.2 (+https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows)';
 function setHttpFetch(fn) { if (typeof fn === 'function') httpFetch = fn; }
 function setUserAgent(ua) { if (ua) USER_AGENT = String(ua); }
 

@@ -2,7 +2,7 @@
 
 > 本文档面向 numb 及其 AI 编码助手。**读完本文件再动手**。进本目录工作的 agent 默认已读仓库根的 `AGENTS.md`（Windows 主线规范），本文件只管 macOS 线的差异与专属规则；两者冲突时，以本文件为准。
 >
-> 项目：章鱼科技 · 安妮播放器 macOS 版（开发者：numb）。仓库：Zhou1019-1/AnniePlayer-LXversion。
+> 项目：章鱼科技 · 安妮播放器 macOS 版（开发者：numb）。仓库：Zhou1019-1/AnniePlayer-LXversion-Windows。
 
 ## 一、你在仓库里的位置与边界（硬规则）
 

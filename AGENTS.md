@@ -1,7 +1,15 @@
 # 安妮播放器 · AI 协作规范（AGENTS.md）
 
 > 本文档面向任何接入本项目的大模型/AI 编码助手。读完本文件即可按项目既定规范开发与发版。
-> 项目名：章鱼科技：安妮播放器（Annie Player，融合版）。仓库：Zhou1019-1/AnniePlayer-LXversion。
+> 项目名：章鱼科技：安妮播放器（Annie Player，融合版）。仓库：Zhou1019-1/AnniePlayer-LXversion-Windows。
+
+## 〇、多平台仓库与本地工作区
+
+- 本仓只负责 Windows 开发。macOS、macOS Lite、iOS、Android 分别在对应独立仓库开发，章鱼负责审核、仓库治理和最终发布，不承担其他平台的功能实现。
+- 本机其他平台工作副本位于 `E:\安妮播放器工作目录\platforms\`；该目录只作本地协作，已加入 `.git/info/exclude`，不属于 Windows 提交内容。
+- 所有贡献者与 AI agent 均走 feature 分支 + PR；禁止直推 main、强推、删除 main、擅自创建发布 tag 或发布 Release。
+- QQ 是主要联系渠道；agent 请求协助时必须按 `CONTRIBUTING.md` 提供仓库、PR、commit、测试、Artifact、SHA256 和待办。秘密与证书不通过 QQ 传递。
+- 旧 `macos/` 目录及历史 Mac Release 仅作兼容存档；新 macOS 工作进入 `AnniePlayer-LXversion-macOS` / `AnniePlayer-LXversion-macOS-Lite`。
 
 ## 一、项目架构速览
 
@@ -85,8 +93,8 @@
 5. **`npm run dist:setup`**：打本地安装包（输出 `setupEXE/annie-player-svlx-setup-X.Y.Z.exe`，已签名）。`predist:setup` 钩子会自动先跑 `dotnet publish ... --self-contained true -p:PublishSingleFile=true`（与云端 release.yml 同一命令）重编引擎到 `engine/publish/`，**不要手工拷贝旧引擎产物**。
    - **教训（V4.4.0 事故）**：曾把本地陈旧的**框架依赖版**引擎（exe 仅 0.15MB、无 coreclr/hostfxr、runtimeconfig 要求 .NET 9.0）打进安装包；用户机器只有 .NET 10（主版本不向下 roll-forward），引擎启动即崩 code=2147516566（0x80008096 FrameworkMissing），主进程 5 次自动重启全灭、`engineAlive:false`、界面无声。云端 release 包永远是自包含的，不受此坑影响——**本地包发出前必须确认 `engine/publish/AnnieEngine.exe` 是 ~69MB 单文件**。
    - 打包前先杀掉残留进程：`Get-Process AnnieEngine,AnniePlayerSVLX -ErrorAction SilentlyContinue | Stop-Process -Force`（AnnieEngine 是独立子进程，杀 electron 不会带走，占用 exe 会导致 publish bundle UnauthorizedAccess）。
-6. **git commit + push main**：提交标题风格 `V4.3.x 功能点1 + 功能点2`（参考历史 `V4.3.21 一键电台 + 右键菜单 + window.state 挂载潜雷修复`）。只 add 相关文件，勿提交 `PR to Luoxue/`、`QobuzExp/`、`_tmp-*` 等杂物目录。
-7. **git tag vX.Y.Z + git push origin vX.Y.Z**：触发 GitHub Actions `release` workflow（`.github/workflows/release.yml`）云端编译引擎、跑测试（冒烟/音频引擎/无损鉴别/沙箱）、自动从更新日志提取 notes、发布 Release。
+6. **git commit + 推送发版分支 + PR**：提交标题风格 `V4.3.x 功能点1 + 功能点2`（参考历史 `V4.3.21 一键电台 + 右键菜单 + window.state 挂载潜雷修复`）。只 add 相关文件，勿提交 `PR to Luoxue/`、`QobuzExp/`、`_tmp-*` 等杂物目录；由 owner 或授权负责人审核合并 main。
+7. **owner 从合并后的 main 创建 vX.Y.Z + push tag**：触发 GitHub Actions `release` workflow（`.github/workflows/release.yml`）云端编译引擎、跑测试（冒烟/音频引擎/无损鉴别/沙箱）、自动从更新日志提取 notes、发布 Release。AI agent 不得擅自执行正式发布。
 
 > **不要**走本地 `scripts/release.js`（gh CLI 方案仅作备用）。标准发版 = tag 推送触发云端 workflow。
 

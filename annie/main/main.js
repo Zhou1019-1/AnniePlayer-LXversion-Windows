@@ -2407,7 +2407,7 @@ async function fetchReleaseNotes(ver) {
     const { net } = require('electron');
     const v = String(ver || '').replace(/[^\d.]/g, '');
     if (!v) return null;
-    const r = await net.fetch('https://api.github.com/repos/Zhou1019-1/AnniePlayer-LXversion/releases/tags/v' + v,
+    const r = await net.fetch('https://api.github.com/repos/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/tags/v' + v,
       { headers: { 'User-Agent': 'annie-player' } });
     if (!r.ok) return null;
     const j = await r.json();

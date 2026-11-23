@@ -5,15 +5,15 @@
 **Windows / macOS HiFi 桌面音乐播放器**
 本地无损曲库 × 洛雪音乐生态 × 三套界面主题；Windows 自研 AnnieEngine（WASAPI / ASIO / VST3），macOS 原生 Swift / CoreAudio
 
-[![最新版本](https://img.shields.io/github/v/release/Zhou1019-1/AnniePlayer-LXversion?display_name=tag&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/latest)
-[![总下载](https://img.shields.io/github/downloads/Zhou1019-1/AnniePlayer-LXversion/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD)](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases)
-[![发布流水线](https://img.shields.io/github/actions/workflow/status/Zhou1019-1/AnniePlayer-LXversion/release.yml?label=%E5%8F%91%E5%B8%83%E6%B5%81%E6%B0%B4%E7%BA%BF)](https://github.com/Zhou1019-1/AnniePlayer-LXversion/actions/workflows/release.yml)
+[![最新版本](https://img.shields.io/github/v/release/Zhou1019-1/AnniePlayer-LXversion-Windows?display_name=tag&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/latest)
+[![总下载](https://img.shields.io/github/downloads/Zhou1019-1/AnniePlayer-LXversion-Windows/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD)](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases)
+[![发布流水线](https://img.shields.io/github/actions/workflow/status/Zhou1019-1/AnniePlayer-LXversion-Windows/release.yml?label=%E5%8F%91%E5%B8%83%E6%B5%81%E6%B0%B4%E7%BA%BF)](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/actions/workflows/release.yml)
 [![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows%2010%2F11%2064--bit-0078d4)](#下载安装)
-[![macOS](https://img.shields.io/badge/macOS-15%2B%20ARM64-000000)](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/tag/mac-v1.0.2)
+[![macOS](https://img.shields.io/badge/macOS-15%2B%20ARM64-000000)](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/tag/mac-v1.0.2)
 [![引擎](https://img.shields.io/badge/%E5%BC%95%E6%93%8E-.NET%209%20%E7%8B%AC%E7%AB%8B%E8%BF%9B%E7%A8%8B-512bd4)](#annieengine独立音频引擎)
 [![license](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
 
-**[Windows 下载](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/latest) · [macOS 下载](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/tag/mac-v1.0.2) · [界面截图](#界面截图) · [核心卖点](#核心卖点) · [更新日志](更新日志.md) · [全功能说明书](#全功能说明书)**
+**[Windows 下载](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/latest) · [macOS 下载](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/tag/mac-v1.0.2) · [界面截图](#界面截图) · [核心卖点](#核心卖点) · [更新日志](更新日志.md) · [全功能说明书](#全功能说明书)**
 
 无敌章鱼哥出品 · 交流 Q 群 **1023637098**（更多 HiFi 资源群公告获取）
 
@@ -38,7 +38,7 @@
 
 ### Windows
 
-**[→ 下载 Windows 最新安装包](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/latest)**（`annie-player-svlx-setup-x.y.z.exe`，约 386MB，含 Apple Music 音源运行时）
+**[→ 下载 Windows 最新安装包](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/latest)**（`annie-player-svlx-setup-x.y.z.exe`，约 386MB，含 Apple Music 音源运行时）
 
 - 系统要求：**Windows 10 / 11 64 位**（1607+；不支持 Windows 7/8——Electron 与 .NET 9 均已不再支持）；内置全部运行库，无需装 .NET / VLC / 任何依赖
 - 安装包未购买代码签名，SmartScreen 提示时点 **「更多信息 → 仍要运行」** 即可
@@ -47,12 +47,14 @@
 
 ### macOS（Apple Silicon）
 
-**[→ 下载 macOS V1.0.2（DMG / ZIP）](https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/tag/mac-v1.0.2)**（社区成员 **numb** 移植）
+**[→ 下载 macOS V1.0.2（DMG / ZIP）](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/tag/mac-v1.0.2)**（社区成员 **numb** 移植）
 
 - 系统要求：**macOS 15.0+ · Apple Silicon（ARM64）**；原生 Swift + WKWebView 外壳，AVFoundation / CoreAudio 音频后端
 - 当前提供 DMG 与 ARM64 ZIP；未签名版本首次打开请使用 **「右键 → 打开」** 并按系统提示允许
 - macOS 使用独立 `mac-v*` 预发布通道，不会抢用 Windows 的 `releases/latest` 在线更新入口
 - 功能清单、构建方法与已知限制见 [macOS 版说明](macos/README.md)；当前 QQ 音乐搜索可用，播放仍受后端风控限制
+- 新开发已迁移至 [macOS 完整版仓库](https://github.com/Zhou1019-1/AnniePlayer-LXversion-macOS) 与 [macOS Lite 仓库](https://github.com/Zhou1019-1/AnniePlayer-LXversion-macOS-Lite)；本仓保留旧 Mac Release 作兼容存档
+- 其他平台：[iOS](https://github.com/Zhou1019-1/AnniePlayer-LXversion-IOS) · [Android](https://github.com/Zhou1019-1/AnniePlayer-LXversion-Android)
 
 ## 界面截图
 
@@ -509,7 +511,7 @@ A：V3.5.12 起已改为柔和暖白，文字对比度同步加深。右上角 �
 ## 开发与构建
 
 ```powershell
-git clone https://github.com/Zhou1019-1/AnniePlayer-LXversion.git
+git clone https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows.git
 cd AnniePlayer-LXversion
 npm install
 npm run setup:tools   # 下载 ffmpeg + 校验引擎/sacd_extract（首次克隆必跑）

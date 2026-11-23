@@ -13,7 +13,7 @@ const { execFileSync } = require('child_process');
 
 const WRAPPER_DIR = path.join(__dirname, '..', 'annie', 'resources', 'wrapper-lite');
 const ZIP_PATH = path.join(__dirname, '..', 'engine', 'tools', '.wrapper-lite-download.zip'); // 临时落点（tools 已 gitignore）
-const ASSET_URL = 'https://github.com/Zhou1019-1/AnniePlayer-LXversion/releases/download/wrapper-lite-v1/wrapper-lite.zip';
+const ASSET_URL = 'https://github.com/Zhou1019-1/AnniePlayer-LXversion-Windows/releases/download/wrapper-lite-v1/wrapper-lite.zip';
 /* wrapper-lite-v1 资产的 SHA256（上传时实测值；升级 wrapper 时同步更新） */
 const EXPECTED_SHA256 = '8fbedd4ed3d02e58451846a167e4b3fbea3eaed3f0d108e3841c83d78855c54c';
 /* 解压后落盘校验基线（裁剪版实测：192 文件 / 275.6MB） */
